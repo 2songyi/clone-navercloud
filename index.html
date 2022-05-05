@@ -13,40 +13,55 @@
   </head>
   <body>
     <div id="wrap">
-      <!-- 헤더 영역 -->
       <header id="header" class="main-header">
-        <div class="h-inner">
-        <div id="logo">
-          <h1><a href="#"></a></h1>
-        </div>
-        <div class="inner"><!-- gnb와 로그인로그아웃 두 그룹을 float해주기 위해 inner로묶음 -->
-          <ul id="gnb">
-            <li><a href="#">홈</a></li>
-            <li><a href="#">소개</a></li>
-            <li><a href="#">클라우드</a></li>
-            <li><a href="#">미디어</a></li>
-            <li><a href="#">채용</a></li>
-            <li><a href="#">제휴</a></li>
-            <li><a href="#">네이버 클라우드 플랫폼</a></li>
-          </ul>
-          <div id="lang-cont">
-            <a href="#" class="lang-btn"></a>
-          </div>
-        </div>
-        </div>
+        <!-- 헤더 load 영역 -->
       </header>
       <!-- gototop -->
-      <a href="#" id="top-btn" class="main-header"></a>
+      <!-- top-btn load영역 -->
+      <div class="top-btn"></div>
       <!-- 컨텐츠 영역 -->
       <div id="container">
         <section id="section01" class="section">
-          <video id="main-video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
-            <source src="./video/home_main.mp4">
-          </video>
-          <div class="s1-box">
+          <!-- main slide swiper영역 -->
+          <div id="main-visual-slide" class="swiper-container">
+            <div class="swiper-wrapper">
+              <ul class="swiper-inner">
+                <li class="swiper-slide one">
+                  <video id="main-video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+                    <source src="./video/home_main.mp4">
+                    </video>
+                    <div class="cont-box">
+                      <h3>모든 비지니스를<br>가능하게 하는<br>네이버클라우드</h3>
+                      <a href="#" class="main-btn">NAVER CLOUD PLATFORM</a>
+                    </div>
+                  </li>
+                  <li class="swiper-slide two">
+                    <div class="img"></div>
+                    <!-- <div class="cont-box">
+                      <h3>개인용 스토리지 '네이버 클라우드'가<br>'네이버 MYBOX'로 변경되었습니다</h3>
+                      <a href="#" class="main-btn">네이버 MYBOX 바로가기</a>
+                    </div> -->
+                  </li>
+                  <li class="swiper-slide three">
+                    <div class="img"></div>
+                    <!-- <div class="cont-box">
+                      <h3>클라우드 '직접' 만듭니다.<br>클라우드를 '함께' 만듭시다</h3>
+                      <a href="#" class="main-btn">채용 바로가기</a>
+                    </div> -->
+                  </li>
+              </ul>
+                <div id="main-slide" class="swiper-container">
+                  <div class="slide-btn-box">
+                    <div class="swiper-button-prev" role="button"></div>
+                    <div class="swiper-button-next" role="button"></div>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <!-- <div class="s1-box">
             <h3>모든 비지니스를<br>가능하게 하는<br>네이버클라우드</h3>
             <a href="#" class="main-btn">NAVER CLOUD PLATFORM</a>
-          </div>
+          </div> -->
           <div class="bottom-btn">
             <button class="down-btn" type="button" id="mainBtnNext">
               <!-- <span>scroll down</span> -->
@@ -61,7 +76,8 @@
           </div>
         </section>
         <section id="section03" class="section">
-          <div class="relative">
+          <div class="wide-section">
+            <div class="relative">
             <div class="leftbox">
               <strong>네이버클라우드는</strong>
               <h3>다양한 산업과<br>규모에 맞춘<br>솔루션 서비스<span>로<br>고객의 비니지스를<br>성공으로 이끕니다</span></h3>
@@ -96,7 +112,7 @@
                 <li><img src="./img/loop/loop_10.jpg" alt="loop10"><span>Work</span></li>
                 <li><img src="./img/loop/loop_12.jpg" alt="loop12"><span>Hybrid Cloud</span></li>
               </ul>
-              <ul class="active right-loop">
+              <ul class="active">
                   <li><img src="./img/loop/loop_01.jpg" alt="loop01"><span>E-Commerce</span></li>
                   <li><img src="./img/loop/loop_03.jpg" alt="loop03"><span>Healthcare</span></li>
                   <li><img src="./img/loop/loop_05.jpg" alt="loop05"><span>Public Sector</span></li>
@@ -124,6 +140,7 @@
                   <li><img src="./img/loop/loop_11.jpg" alt="loop11"><span>Big Data</span></li>
               </ul>
             </div>
+          </div>
           </div>
         </section>
         <section id="section04" class="section">
@@ -221,45 +238,10 @@
               </div>
             </div>
           </div>
-          <footer>
-            <!-- footer영역 -->
-      <div class="footer-wrap">
-        <div class="footer-left">
-          <img src="./img/icon/footer_logo.png" alt="">
-          <div class="copyright">
-            <p>사업자등록번호:129-85-31394 통신판매업신고번호:제2009-경기성남-0510호<br>대표이사:박원기 주소:경기도 성남시 분당구 분당내곡로 117 10층 및 11층 네이버클라우드, 13529<br>
-            ⓒ NAVER Cloud Corp. All Rights Reserved.</p>
-          </div>
-          <div class="link-txt">
-            <a href="#">기업윤리 상담센터</a>
-            <a href="#">개인정보 처리방침</a>
-          </div>
-          <div class="link-social">
-            <ul>
-              <li><a href="#">네이버 블로그</a></li>
-              <li><a href="#">페이스북</a></li>
-              <li><a href="#">네이버TV</a></li>
-              <li><a href="#">유튜브</a></li>
-              <li><a href="#">미디엄</a></li>
-              <li><a href="#">링크드인</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer-right">
-          <div class="family-site">
-            <button id="family-list-btn" type="button">관계사 바로가기</button>
-            <ul>
-              <li><a href="https://www.navercorp.com" target="_blank">네이버</a></li>
-              <li><a href="https://www.naverlabs.com" target="_blank">네이버랩스</a></li>
-              <li><a href="https://naver.worksmobile.com" target="_blank">웍스모바일</a></li>
-              <li><a href="https://linepluscorp.com/" target="_blank">라인</a></li>
-              <li><a href="https://clova.ai/ko/" target="_blank">클로바</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
         </section>
+          <footer>
+            <!-- footer load 영역 -->
+          </footer>
       </div>
     </div>
   </body>

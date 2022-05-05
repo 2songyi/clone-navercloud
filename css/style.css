@@ -163,7 +163,7 @@ a { color: #666666; text-decoration: none;}
   width: 100%;
   height: 100vh;
 }
-#section01 #main-video {
+/* #section01 #main-video {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -172,7 +172,7 @@ a { color: #666666; text-decoration: none;}
   z-index: -1;
   overflow: hidden;
   object-fit: cover;
-}
+} */
 #section01 .s1-box {
   position: absolute;
   width: 100%;
@@ -213,6 +213,115 @@ a.main-btn {
 }
 a.main-btn:hover {
   border: 1px solid rgba(255, 255, 255, 1);
+}
+
+/* swiper slide area */
+#main-visual-slide {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.swiper-container {
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+}
+
+.swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  box-sizing: content-box;
+  overflow: hidden;
+}
+
+.swiper-wrapper ul {
+  overflow: hidden;
+  float: left;
+}
+.swiper-wrapper ul li {
+  float: left;
+}
+.swiper-wrapper .swiper-slide .img {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.swiper-wrapper .swiper-slide.two .img {
+  background-image: url('../img/slide_img01.jpg');
+}
+.swiper-wrapper .swiper-slide.three .img {
+  background-image: url('../img/slide_img02.jpg');
+}
+#main-visual-slide .swiper-slide {
+  overflow: hidden;
+}
+
+#main-visual-slide .cont-box {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  padding: 0 150px;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  transition: .3s;
+}
+
+#main-visual-slide .cont-box h3 {
+  font-size: 48px;
+  line-height: 68px;
+  color: #fff;
+  letter-spacing: -1px;
+}
+
+/* slide btn area */
+#main-slide {
+  position: absolute;
+}
+.slide-btn-box {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  width: 100%;
+  height: 48px;
+  transform: translateX(-50%);
+  z-index: 30;
+  padding: 0 150px;
+}
+
+#section01 .slide-btn-box .swiper-button-prev, #section01 .slide-btn-box .swiper-button-next {
+  top: auto;
+  width: 48px;
+  height: 48px;
+  margin-top: 0;
+  background-size: cover;
+  position: relative;
+  display: inline-block;
+}
+
+#section01 .slide-btn-box .swiper-button-prev {
+  background-image: url('../img/icon/main_prev_btn.png');
+  left: auto;
+  transition: .3s;
+}
+#section01 .slide-btn-box .swiper-button-prev:hover {
+  background-image: url('../img/icon/main_prev_btn_g.png');
+}
+#section01 .slide-btn-box .swiper-button-next {
+  background-image: url('../img/icon/main_next_btn.png');
+  right: auto;
+  margin-left: 24px;
+  transition: .3s;
+}
+#section01 .slide-btn-box .swiper-button-next:hover {
+  background-image: url('../img/icon/main_next_btn_g.png');
 }
 
 /* down btn영역 */
@@ -317,8 +426,8 @@ a.into-btn:hover {
 }
 
 /* section03 infinite animation있는 영역 */
-#section03 {
-  /* width: 100%; */
+#section03 .wide-section {
+  width: 100%;
   background: #f9f9f9;
 }
 #section03 .relative {
@@ -354,19 +463,21 @@ a.into-btn:hover {
 }
 
 /* rightbox 그림 무한루프 영역 */
-.rightbox {
+#section03 .wide-section .rightbox {
   width: 50%;
   float: right;
   overflow: hidden;
   text-align: right;
 }
-.rightbox ul {
+#section03 .wide-section .rightbox ul {
   display: inline-block;
   margin-right: 6%;
   width: 43%;
   height: calc(352px * 36);
 }
-#section03 .rightbox ul.right-loop {
+#section03 .rightbox ul:nth-child(2) {
+  vertical-align: top;
+  /* top안해주면 margin-top안먹힘 */
   margin: -160px 0 0 0;
 }
 .rightbox ul li {
@@ -451,24 +562,33 @@ a.into-btn:hover {
   letter-spacing: -1px;
   margin-bottom: 60px;
 }
-
-#section04 .rightbox-4 img {
+#section04 .rightbox-4 {
   position: absolute;
   width: 360px;
   height: 360px;
   top: 50%;
   right: 90px;
   transform: translateY(-50%);
+  opacity: 0;
+  transition: all 1.5s ease;
+}
+#section04.active .rightbox-4 {
+  opacity: 1;
+}
+
+#section04 .rightbox-4 img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   transform: scale(1.3);
   transition: all 1.5s ease;
+  z-index: 1;
 }
 
 #section04.active .rightbox-4 img {
-  position: absolute;
   transform: scale(1);
-  top: 50%;
-  /* right: 90px; */
-  /* transform: translateY(-50%); */
 }
 
 #section04 .into-btn {
@@ -662,6 +782,7 @@ footer .footer-wrap {
   position: relative;
   padding: 50px 90px;
   background: #f9f9f9;
+  height: 250px;
 }
 
 .footer-wrap .footer-left img {

@@ -1,4 +1,7 @@
 $(function(){
+  $("header").load("./load/header.html .h-inner");
+  $("footer").load("./load/footer.html .footer-wrap");
+  $(".top-btn").load("./load/top_btn.html a");
 
   // scrollTop의 값이 첫번째 slide높이값보다 클때 header에 class추가하기
   $(window).scroll(function() {
@@ -84,6 +87,18 @@ $(function(){
       return false; //일단 a태그 기능 없앰
     });
 
+    // main auto slide
+    // window width 가져옴-> ul개수 가져옴 ->초기넓이 설정하기
+    let winWidth = $(window).width(); //window width가져오기
+    // let ulLeng = 3;
+    $(".swiper-wrapper").width(winWidth * 2);
+    console.log($(".swiper-wrapper").width());
 
 
+    // footer 관계사 hide, show
+    // .sub 를 toggle로 주고 빼고 함 .sub있는 경우 올라와있고 아니면 내리기
+    // $("관계사 ul").hide();
+    // $("관계사 ul").click( function(){
+    //   $("관계사 .sub").toggle();
+    // })
 });
