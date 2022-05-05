@@ -88,11 +88,45 @@ $(function(){
     });
 
     // main auto slide
-    // window width 가져옴-> ul개수 가져옴 ->초기넓이 설정하기
     let winWidth = $(window).width(); //window width가져오기
-    // let ulLeng = 3;
-    $(".swiper-wrapper").width(winWidth * 2);
-    console.log($(".swiper-wrapper").width());
+    let liLeng = $(".swiper-wrapper ul li").length; //li 개수 가져오기
+    $(".swiper-wrapper ul").css("width", winWidth*liLeng); //ul의 너비 설정
+    console.log($(".swiper-wrapper ul").css("width"));
+
+    initialFunc("prev"); //슬라이드 포지션 초기화
+    // 슬라이드 포지션 함수
+    function initialFunc(init) {
+      $(".swiper-wrapper").css("margin-left", -winWidth);
+      if (init === "prev") {
+        $(".swiper-wrapper ul li:last").prependTo(".swiper-wrapper ul");
+      } else if (init === "next") {
+        $(".swiper-wrapper ul li:first").appendTo(".swiper-wrapper ul");
+      }
+    }
+
+    function btnClickFunc(elem) {
+      elem.click(function() {
+        let caInMarginLeft = parseInt($(".swiper-wrapper").css("margin-left"));
+        let isAni = $(".swiper-wrapper").is(":animated");
+
+        if (!isAni) {
+
+          if ($(elem).hasClass("prev")) {
+            $(".swiper-wrapper").animate({marginLeft: caInMarginLeft + winWidth}, "slow", function(){
+              initialFunc("prev");
+            });
+          } else if ($(elem).hasClass("next")) {
+            $(".swiper-wrapper").animate({marginLeft: caInMarginLeft - winWidth}, "slow", function(){
+              initialFunc("next");
+            });
+          }
+        }
+      })
+    }
+    $(".slide-btn").each(function(){
+      btnClickFunc($(this));
+    });
+
 
 
     // footer 관계사 hide, show
