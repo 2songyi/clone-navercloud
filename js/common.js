@@ -12,19 +12,17 @@ $(function(){
 
     if (wHeight <= scTop) {
       $("header").removeClass("main-header");
-      $("#top-btn").removeClass("main-header");
     } else {
       $("header").addClass("main-header");
-      $("#top-btn").addClass("main-header");
     }
 
     // each로 각 section의 높이를 구해서 구역별로 조건을 주고 클래스를 추가하고 css animation으로 효과주기
     $(".section").each(function() { //each로 각각의 값을 가져옴
       let thisOffset = $(this).offset();
       // console.log(thisOffset);
-      if (scTop >= 0 && scTop < 969) {
+      if (scTop >= 0 && scTop < 500) { //969
         // section01
-      } else if (scTop >= 969 && scTop < 1601) {
+      } else if (scTop >= 700 && scTop < 1601) { //969
         // section02
         $(this).addClass("effect");
       } else if (scTop >= 1601 && scTop < 2461) {
@@ -88,44 +86,44 @@ $(function(){
     });
 
     // main auto slide
-    let winWidth = $(window).width(); //window width가져오기
-    let liLeng = $(".swiper-wrapper ul li").length; //li 개수 가져오기
-    $(".swiper-wrapper ul").css("width", winWidth*liLeng); //ul의 너비 설정
-    console.log($(".swiper-wrapper ul").css("width"));
-
-    initialFunc("prev"); //슬라이드 포지션 초기화
-    // 슬라이드 포지션 함수
-    function initialFunc(init) {
-      $(".swiper-wrapper").css("margin-left", -winWidth);
-      if (init === "prev") {
-        $(".swiper-wrapper ul li:last").prependTo(".swiper-wrapper ul");
-      } else if (init === "next") {
-        $(".swiper-wrapper ul li:first").appendTo(".swiper-wrapper ul");
-      }
-    }
-
-    function btnClickFunc(elem) {
-      elem.click(function() {
-        let caInMarginLeft = parseInt($(".swiper-wrapper").css("margin-left"));
-        let isAni = $(".swiper-wrapper").is(":animated");
-
-        if (!isAni) {
-
-          if ($(elem).hasClass("prev")) {
-            $(".swiper-wrapper").animate({marginLeft: caInMarginLeft + winWidth}, "slow", function(){
-              initialFunc("prev");
-            });
-          } else if ($(elem).hasClass("next")) {
-            $(".swiper-wrapper").animate({marginLeft: caInMarginLeft - winWidth}, "slow", function(){
-              initialFunc("next");
-            });
-          }
-        }
-      })
-    }
-    $(".slide-btn").each(function(){
-      btnClickFunc($(this));
-    });
+    // let winWidth = $(window).width(); //window width가져오기
+    // let liLeng = $(".swiper-wrapper ul li").length; //li 개수 가져오기
+    // $(".swiper-wrapper ul").css("width", winWidth*liLeng); //ul의 너비 설정
+    // console.log($(".swiper-wrapper ul").css("width"));
+    //
+    // initialFunc("prev"); //슬라이드 포지션 초기화
+    // // 슬라이드 포지션 함수
+    // function initialFunc(init) {
+    //   $(".swiper-wrapper").css("margin-left", -winWidth);
+    //   if (init === "prev") {
+    //     $(".swiper-wrapper ul li:last").prependTo(".swiper-wrapper ul");
+    //   } else if (init === "next") {
+    //     $(".swiper-wrapper ul li:first").appendTo(".swiper-wrapper ul");
+    //   }
+    // }
+    //
+    // function btnClickFunc(elem) {
+    //   elem.click(function() {
+    //     let caInMarginLeft = parseInt($(".swiper-wrapper").css("margin-left"));
+    //     let isAni = $(".swiper-wrapper").is(":animated");
+    //
+    //     if (!isAni) {
+    //
+    //       if ($(elem).hasClass("prev")) {
+    //         $(".swiper-wrapper").animate({marginLeft: caInMarginLeft + winWidth}, "slow", function(){
+    //           initialFunc("prev");
+    //         });
+    //       } else if ($(elem).hasClass("next")) {
+    //         $(".swiper-wrapper").animate({marginLeft: caInMarginLeft - winWidth}, "slow", function(){
+    //           initialFunc("next");
+    //         });
+    //       }
+    //     }
+    //   })
+    // }
+    // $(".slide-btn").each(function(){
+    //   btnClickFunc($(this));
+    // });
 
 
 
@@ -135,4 +133,27 @@ $(function(){
     // $("관계사 ul").click( function(){
     //   $("관계사 .sub").toggle();
     // })
+
+
+    // top-btn
+    // 클락사 상단으로 이동
+    $("#top-btn").click(function(){
+      $("html, body").animate({scrollTop: 0}, 1000);
+    });
+    // top에 있을때는 안보이게
+    $(window).scroll(function(){
+      let wHeight = $(window).scrollTop();
+
+      if (wHeight == 0) {
+        $("#top-btn").removeClass("on");
+      } else if (wHeight > 0)(
+        $("#top-btn").addClass("on")
+      )
+    });
+
+    $("button#family-list-btn").click(function(){
+      console.log('test');
+    });
+
+
 });

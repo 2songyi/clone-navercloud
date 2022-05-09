@@ -6,7 +6,8 @@
     <title>NAVER Cloud</title>
     <link rel="stylesheet" href="./css/initial.min.css">
     <link rel="stylesheet" href="./css/default.css">
-    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <!-- <link rel="stylesheet" href="./css/swiper.css"> -->
     <link rel="stylesheet" href="./css/style.css">
     <script type="text/javascript" src="./js/jquery.js"></script>
     <script type="text/javascript" src="./js/common.js"></script>
@@ -25,48 +26,42 @@
           <!-- main slide swiper영역 -->
           <div id="main-visual-slide" class="swiper-container">
             <div class="swiper-wrapper">
-              <ul class="swiper-inner">
-                <li class="swiper-slide one">
+              <div class="swiper-inner swiper-slide">
+                <div class="swiper-slide one">
                   <video id="main-video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
                     <source src="./video/home_main.mp4">
-                    </video>
-                    <div class="cont-box">
-                      <h3>모든 비지니스를<br>가능하게 하는<br>네이버클라우드</h3>
-                      <a href="#" class="main-btn">NAVER CLOUD PLATFORM</a>
-                    </div>
-                  </li>
-                  <li class="swiper-slide two">
-                    <!-- <img src="../img/slide/slide_img01.jpg" alt=""> -->
-                    <div class="img"></div>
-                    <!-- <div class="cont-box">
-                      <h3>개인용 스토리지 '네이버 클라우드'가<br>'네이버 MYBOX'로 변경되었습니다</h3>
-                      <a href="#" class="main-btn">네이버 MYBOX 바로가기</a>
-                    </div> -->
-                  </li>
-                  <li class="swiper-slide three">
-                    <!-- <img src="../img/slide/slide_img02.jpg" alt=""> -->
-                    <div class="img"></div>
-                    <!-- <div class="cont-box">
-                      <h3>클라우드 '직접' 만듭니다.<br>클라우드를 '함께' 만듭시다</h3>
-                      <a href="#" class="main-btn">채용 바로가기</a>
-                    </div> -->
-                  </li>
-              </ul>
+                  </video>
+                  <div class="cont-box">
+                    <h3>모든 비지니스를<br>가능하게 하는<br>네이버클라우드</h3>
+                    <a href="#" class="main-btn">NAVER CLOUD PLATFORM</a>
+                  </div>
+                </div>
+                <!-- <div class="swiper-slide two">
+                  <div class="cont-box">
+                    <h3>개인용 스토리지 '네이버 클라우드'가<br>'네이버 MYBOX'로 변경되었습니다</h3>
+                    <a href="#" class="main-btn">네이버 MYBOX 바로가기</a>
+                  </div>
+                </div>
+                <div class="swiper-slide three">
+                  <div class="cont-box">
+                    <h3>클라우드 '직접' 만듭니다.<br>클라우드를 '함께' 만듭시다</h3>
+                    <a href="#" class="main-btn">채용 바로가기</a>
+                  </div>
+                </div> -->
+              </div>
             </div>
+            <!-- <div class="swiper-pagination"></div> -->
+            <!-- <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div> -->
           </div>
           <div id="main-slide" class="swiper-container">
             <div class="slide-btn-box">
-              <!-- <div class="swiper-button-prev prev slide-btn" role="button"></div> -->
-              <!-- <div class="swiper-button-next next slide-btn" role="button"></div> -->
+              <div class="swiper-button-prev prev slide-btn" role="button"></div>
+              <div class="swiper-button-next next slide-btn" role="button"></div>
             </div>
           </div>
-          <!-- <div class="s1-box">
-            <h3>모든 비지니스를<br>가능하게 하는<br>네이버클라우드</h3>
-            <a href="#" class="main-btn">NAVER CLOUD PLATFORM</a>
-          </div> -->
           <div class="bottom-btn">
             <button class="down-btn" type="button" id="mainBtnNext">
-              
               <!-- <span>scroll down</span> -->
             </button>
           </div>
@@ -247,5 +242,22 @@
           </footer>
       </div>
     </div>
+    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+       var swiper = new Swiper(".swiper-container", {
+         loop: true, //무한루프
+         autoplay: {//자동 플레이
+           delay: 2500, //ms기준
+         },
+         navigation: {
+           nextEl: '.swiper-button-next',
+           prevEl: '.swiper-button-prev'
+         },
+         pagination: {
+           el: '.swiper-pagination',
+           clickable: true,
+         }
+       });
+    </script> -->
   </body>
 </html>
