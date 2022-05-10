@@ -1,14 +1,12 @@
 $(function(){
-  $("header").load("./load/header.html .h-inner");
-  $("footer").load("./load/footer.html .footer-wrap");
-  $(".top-btn").load("./load/top_btn.html a");
+  // $("header").load("./load/header.html .h-inner");
+  // $("footer").load("./load/footer.html .footer-wrap");
+  // $(".top-btn").load("./load/top_btn.html a");
 
   // scrollTop의 값이 첫번째 slide높이값보다 클때 header에 class추가하기
   $(window).scroll(function() {
     let scTop = $(window).scrollTop();
     let wHeight = $(window).height();
-    // console.log(scTop);
-    // console.log(wHeight);
 
     if (wHeight <= scTop) {
       $("header").removeClass("main-header");
@@ -16,7 +14,7 @@ $(function(){
       $("header").addClass("main-header");
     }
 
-    // each로 각 section의 높이를 구해서 구역별로 조건을 주고 클래스를 추가하고 css animation으로 효과주기
+    /*scroll시 section별로 animation효과를 위한 class추가*/
     $(".section").each(function() { //each로 각각의 값을 가져옴
       let thisOffset = $(this).offset();
       // console.log(thisOffset);
@@ -35,11 +33,11 @@ $(function(){
         $(this).addClass("effect");
       }
   })
-
-// down 아이콘 클릭시 다음 section으로 넘어가기
-// click이벤트로 click시 class추기
-
 });
+
+// down 아이콘 클릭시 스크롤 에니메이션
+
+
 
   // $(".section").each(function () {
   //               // 개별적으로 Wheel 이벤트 적용 mousewheel(IE/chrome/opera) DOMMouseScroll(FF)

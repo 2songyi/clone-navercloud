@@ -344,8 +344,9 @@ a.main-btn:hover {
   left: 50%;
   z-index: 10;
   transform: translateX(-50%);
+  transition: .5s;
 }
-.bottom-btn button {
+.bottom-btn a#mainBtnNext {
   display: block;
   width: 64px;
   height: 62px;
@@ -357,7 +358,7 @@ a.main-btn:hover {
   animation: arrowMove 1.6s infinite;
   transition: .3s;
 }
-.bottom-btn button:hover {
+.bottom-btn a#mainBtnNext:hover {
   background-image: url('../img/icon/down_arrow_hover.png')
 }
 
